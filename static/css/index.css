@@ -1,0 +1,17 @@
+.message-bio {
+    overflow: hidden;
+}
+
+.paragraph>a>p {
+    display: block !important;
+}
+
+.whoarewe {
+    height: 55dvh;
+
+}
+
+.paragraph,
+  .photo {
+    height: 50dvh;
+  }

@@ -25,6 +25,15 @@ class Controller {
         include __DIR__ . '/../home/menu/mdmessage.php';
     }
 
+    public function companyprofile() {
+        include __DIR__ . '/../home/menu/companyprofile.php';
+    }
+
+    public function sucess() {
+        include __DIR__ . '/../home/menu/sucess.php';
+    }
+
+
 
     public function gallery() {
         include __DIR__ . '/../home/index/gallery.php';
