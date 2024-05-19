@@ -1,27 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Company Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        *, html, body {
+        :root {
+            --primary: #0151a7;
+            --secondary: #343a40;
+            --dropdown: #007bff;
+            --background: #f8f9fa;
+            --text: #343a40;
+            --nav-bg: rgba(255, 255, 255, 0.8);
+            --headfont: bold 24px 'Times New Roman', serif;
+            --parafont: 18px 'Poppins', serif;
+        }
+
+        *,
+        html,
+        body {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font: var(--parafont);
         }
 
         body {
             background-color: #f2f2f2;
             margin-top: 80px;
+            color: var(--text);
         }
 
-        :root {
-            --primary: #007bff;
-            --secondary: #28a745;
-            --background: #f8f9fa;
-            --text: #343a40;
-            --nav-bg: rgba(255, 255, 255, 0.8);
+        h1,h2,h3,h4,h5,h6 {
+            font: var(--headfont);
         }
 
         header {
@@ -50,6 +63,7 @@
 
         .logo img {
             max-height: 50px;
+            cursor: pointer;
         }
 
         .nav-links {
@@ -64,7 +78,7 @@
             padding: 8px 12px;
             margin-left: 25px;
             border-radius: 5px;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .nav-links a:hover {
@@ -91,7 +105,7 @@
             font-weight: 500;
             padding: 8px 12px;
             border-radius: 5px;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, color 0.3s ease;
             display: inline-block;
         }
 
@@ -103,29 +117,37 @@
         .dropdown-content {
             display: none;
             position: absolute;
-            top: 60px;
-            left: 0;
+            top: 100%;
+            left: 10px;
             background-color: var(--nav-bg);
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            min-width: 200px;
             z-index: 1;
             border-radius: 5px;
+            padding: 5px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
         }
 
         .dropdown-content a {
-            color: var(--text);
-            padding: 12px 16px;
+            color: var(--primary);
+            padding: 8px 10px;
             text-decoration: none;
             display: block;
             text-align: left;
         }
 
         .dropdown-content a:hover {
-            background-color: #e9ecef;
+            background-color: #343a40;
         }
 
         .dropdown:hover .dropdown-content {
-            display: block;
+            display: flex;
+            opacity: 1;
+            transform: translateY(0);
+            flex-direction: column;
+            align-items: start;
+            row-gap: 5px;
         }
 
         .menu-toggle {
@@ -136,6 +158,8 @@
             color: var(--text);
             cursor: pointer;
             background-color: var(--nav-bg);
+            padding: 10px;
+            border-radius: 5px;
         }
 
         @media (max-width: 769px) {
@@ -149,48 +173,68 @@
                 position: absolute;
                 top: 100%;
                 right: 0;
-                width: 200px;
+                width: 240px;
                 background-color: var(--nav-bg);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+                border-radius: 5px;
+                padding-left: 10px;
+                padding-block: 15px;
+                row-gap: 15px;
             }
 
             .nav-links.show {
                 display: flex;
-            }
+                align-items: flex-start;
 
-            .nav-links a {
-                margin-left: 0;
-                text-align: center;
             }
 
             .dropdown-content {
                 position: static;
                 box-shadow: none;
+                row-gap: 10px;
             }
+
+            .dropdown-content {
+                padding-left: 14px;
+            }
+        }
+
+        .nav-links a,
+        .dropbtn {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a i,
+        .dropbtn i {
+            margin-right: 8px;
         }
     </style>
 </head>
+
 <body>
     <header>
         <nav>
             <div class="logo">
-                <img src="your-logo.png" alt="Your Logo">
+                <img src="static/img/logo.png" alt="Your Logo">
             </div>
             <div class="nav-links">
-                <a href="#" class="active">Home</a>
+                <a href="#" class="nav active"><i class="fas fa-home"></i> Home</a>
                 <div class="dropdown">
-                    <a href="#" class="dropbtn">About Us</a>
+                    <a href="#" class="nav dropbtn"><i class="fas fa-info-circle"></i> About Us</a>
                     <div class="dropdown-content">
-                        <a href="#">Our Team</a>
-                        <a href="#">Our Mission</a>
+                        <a href="#" class="dropnav"><i class="fas fa-users"></i> Our Team</a>
+                        <a href="#" class="dropnav"><i class="fas fa-bullseye"></i> Our Mission</a>
                     </div>
                 </div>
-                <a href="#">Services</a>
-                <a href="#">Contact</a>
+                <a href="#" class="nav"><i class="fas fa-laptop-code"></i> Services</a>
+                <a href="#" class="nav"><i class="fas fa-envelope"></i> Contact</a>
             </div>
-            <button class="menu-toggle">&#9776;</button>
+            <button class="menu-toggle"><i class="fas fa-bars"></i></button>
         </nav>
     </header>
     <main>
+        <h1>Welcome to Our Company</h1>
     </main>
 
     <script>
@@ -218,4 +262,5 @@
         });
     </script>
 </body>
+
 </html>
