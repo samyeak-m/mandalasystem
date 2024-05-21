@@ -5,7 +5,14 @@ $controller = new Controller();
 $controller->header('Home');
 $controller->slider();
 $controller->mdmessage();
-
+?>
+<section class="products">
+<h1 class="animate">Our Products</h1>
+<?php
+$controller->allproducts();
+?>
+</section>
+<?php
 $controller->footer();
 ?>
 

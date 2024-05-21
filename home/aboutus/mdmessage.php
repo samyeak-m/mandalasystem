@@ -1,7 +1,6 @@
-<link rel="stylesheet" href="static/css/menu/mdmessage.css">
+<link rel="stylesheet" href="static/css/aboutus/about.css">
 <div class="waw animates show-animation" style="height:55dvh">
     <div class="whoarewe">
-
         <div class="paragraph">
             <h1 class="animate">MD Message</h1>
             <h4 class="animate">Biplav Man Singh</h4>
@@ -22,7 +21,6 @@
                 <p>Read more </p>
             </a>
         </div>
-
         <div class="photo">
             <img src="static/img/president.jpg" alt="bar" class="animate">
         </div>

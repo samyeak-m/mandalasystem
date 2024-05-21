@@ -2,20 +2,23 @@
 require_once "app/controller.php";
 require_once "app/model.php";
 
-$requestUrL = $_SERVER['REQUEST_URI'];
-$requestUri =substr($requestUrL,14);
+$requestUrl = $_SERVER['REQUEST_URI'];
+$parsedUrl = parse_url($requestUrl);
+$requestPath = substr($parsedUrl['path'], 14);
+parse_str($parsedUrl['query'] ?? '', $queryParams);
 
 $routes = [
     '/' => 'Controller@index',
     '/abouts' => 'Controller@abouts',
+    '/products' => 'Controller@products',
+    '/singleproduct' => 'Controller@singleproduct',
     '/test' => 'Controller@test',
-    
+
 ];
 
-$controllerMethod = $routes[$requestUri] ?? null;
+$controllerMethod = $routes[$requestPath] ?? null;
 
 try {
-
     if ($controllerMethod !== null) {
         list($controllerName, $methodName) = explode('@', $controllerMethod);
 
@@ -26,7 +29,11 @@ try {
         // Check if the class and method exist
         if (class_exists($controllerName) && method_exists($controllerName, $methodName)) {
             $controller = new $controllerName();
-            $controller->$methodName();
+            if ($methodName === 'singleproduct' && isset($queryParams['id'])) {
+                $controller->$methodName($queryParams['id']);
+            } else {
+                $controller->$methodName();
+            }
         } else {
             $controller = new Controller();
             $controller->notFound();

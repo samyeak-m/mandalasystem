@@ -22,18 +22,28 @@ class Controller {
     }
 
     public function mdmessage() {
-        include __DIR__ . '/../home/menu/mdmessage.php';
+        include __DIR__ . '/../home/aboutus/mdmessage.php';
     }
 
     public function companyprofile() {
-        include __DIR__ . '/../home/menu/companyprofile.php';
+        include __DIR__ . '/../home/aboutus/companyprofile.php';
     }
 
     public function sucess() {
-        include __DIR__ . '/../home/menu/sucess.php';
+        include __DIR__ . '/../home/aboutus/sucess.php';
     }
 
+    public function products() {
+        include __DIR__ . '/../home/menubar/product.php';
+    }
 
+    public function allproducts() {
+        include __DIR__ . '/../home/products/allproducts.php';
+    }
+
+    public function singleproduct($id) {
+        include __DIR__ . '/../home/products/singleproduct.php';
+    }
 
     public function gallery() {
         include __DIR__ . '/../home/index/gallery.php';

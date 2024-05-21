@@ -23,7 +23,7 @@
   }
   
   .whoarewe {
-    width: 70vw;
+    width: 70dvw;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;

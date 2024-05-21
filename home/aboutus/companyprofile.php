@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="static/css/menu/mdmessage.css">
+<link rel="stylesheet" href="static/css/aboutus/about.css">
 <div class="waw animates show-animation">
     <div class="whoarewe">
 

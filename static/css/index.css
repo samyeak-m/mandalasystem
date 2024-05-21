@@ -1,17 +1,36 @@
 .message-bio {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .paragraph>a>p {
-    display: block !important;
+  display: block !important;
 }
 
 .whoarewe {
-    height: 55dvh;
+  height: 55dvh;
 
 }
 
 .paragraph,
-  .photo {
-    height: 50dvh;
-  }
+.photo {
+  height: 50dvh;
+}
+
+.products {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0.1rem;
+  margin-top:70px;
+  width: 100dvw;
+  overflow: hidden;
+
+}
+
+.products>h1 {
+  text-align: center;
+  font: var(--headfont);
+  color: var(--primarycolor);
+
+}
