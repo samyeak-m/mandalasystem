@@ -1,0 +1,10 @@
+header{
+    background-color: var(--headcolor) !important;
+}
+
+.main{
+    width: 100dvw;
+    padding-top: 70px;
+    display: flex;
+    justify-content: center;
+}

@@ -41,7 +41,7 @@ echo '</script>';
           <a class="anav dropbtn <?php if ($page === 'Abouts')
             echo 'active'; ?>" href="abouts">About Us</a>
           <div class="dropdown-content" id="dropdown-content">
-            <a href="products" class="dropnav">Our Products</a>
+            <a href="allproducts" class="dropnav">Our Products</a>
             <a href="customers" class="dropnav">Our Customers</a>
           </div>
           </div>

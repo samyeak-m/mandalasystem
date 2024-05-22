@@ -9,7 +9,7 @@ $controller->mdmessage();
 <section class="products">
 <h1 class="animate">Our Products</h1>
 <?php
-$controller->allproducts();
+$controller->products();
 ?>
 </section>
 <?php

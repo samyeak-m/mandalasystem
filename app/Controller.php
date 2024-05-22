@@ -34,15 +34,21 @@ class Controller {
     }
 
     public function products() {
-        include __DIR__ . '/../home/menubar/product.php';
+        include __DIR__ . '/../home/products/product.php';
     }
 
     public function allproducts() {
-        include __DIR__ . '/../home/products/allproducts.php';
+        include __DIR__ . '/../home/menubar/allproducts.php';
     }
 
     public function singleproduct($id) {
+        $productId = $id;
         include __DIR__ . '/../home/products/singleproduct.php';
+    }
+
+    public function productdetail($productId) {
+        $id = $productId;
+        include __DIR__ . '/../home/products/productdetail.php';
     }
 
     public function gallery() {

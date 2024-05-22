@@ -10,7 +10,7 @@ parse_str($parsedUrl['query'] ?? '', $queryParams);
 $routes = [
     '/' => 'Controller@index',
     '/abouts' => 'Controller@abouts',
-    '/products' => 'Controller@products',
+    '/allproducts' => 'Controller@allproducts',
     '/singleproduct' => 'Controller@singleproduct',
     '/test' => 'Controller@test',
 
