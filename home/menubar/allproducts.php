@@ -8,7 +8,7 @@ $controller->header("Products");
 
 <section class="main">
 <?php
-$controller->products();
+$controller->products(2);
 ?>
 </section>
 

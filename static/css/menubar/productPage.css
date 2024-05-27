@@ -2,6 +2,11 @@ header{
     background-color: var(--headcolor) !important;
 }
 
+.dropdown-content{
+    background-color: var(--headcolor) !important;
+
+}
+
 .main{
     width: 100dvw;
     padding-top: 70px;
