@@ -6,10 +6,13 @@ $controller = new Controller();
 $controller->header("Products");
 ?>
 
-<section class="main">
+<section class="product_main">
+<h1 class="animate">Our Products</h1>
+<div class="product_list">
 <?php
-$controller->products(2);
+$controller->products();
 ?>
+</div>
 </section>
 
 <?php 

@@ -26,7 +26,6 @@ try {
             include 'app/controller.php';
         });
 
-        // Check if the class and method exist
         if (class_exists($controllerName) && method_exists($controllerName, $methodName)) {
             $controller = new $controllerName();
             if ($methodName === 'singleproduct' && isset($queryParams['id'])) {

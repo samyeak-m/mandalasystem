@@ -33,6 +33,10 @@ class Controller {
         include __DIR__ . '/../home/aboutus/sucess.php';
     }
 
+    public function customer() {
+        include __DIR__ . '/../home/customer/customers.php';
+    }
+
     public function products($limit = -1) {
         include __DIR__ . '/../home/products/product.php';
     }

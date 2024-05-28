@@ -22,7 +22,7 @@
             </a>
         </div>
         <div class="photo">
-            <img src="static/img/president.jpg" alt="bar" class="animate">
+            <img src="static/img/president.jpg" onerror="this.src='static/img/errorimg.png'; this.alt='Error Md image';" alt="bar" class="animate">
         </div>
 
     </div>

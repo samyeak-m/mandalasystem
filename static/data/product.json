@@ -19,5 +19,48 @@
         "description": "This system helps manage accounts and budgets efficiently and provides detailed financial reports, budgeting tools, and expense tracking capabilities.",
         "price": "$499",
         "image": "static/img/img1.jpg"
+    },
+
+    {
+        "id":4,
+        "name": "Exhibition Management System",
+        "description": "This system helps manage accounts and budgets efficiently and provides detailed financial reports, budgeting tools, and expense tracking capabilities.",
+        "price": "$499",
+        "image": "static/img/img1.jpg"
+    },
+    {
+        "id":5,
+        "name": "Rental Management System",
+        "description": "This system helps manage accounts and budgets efficiently and provides detailed financial reports, budgeting tools, and expense tracking capabilities.",
+        "price": "$499",
+        "image": "static/img/img1.jpg"
+    },
+    {
+        "id":6,
+        "name": "Distribution Management System",
+        "description": "This system helps manage accounts and budgets efficiently and provides detailed financial reports, budgeting tools, and expense tracking capabilities.",
+        "price": "$499",
+        "image": "static/img/img1.jpg"
+    },
+    {
+        "id":7,
+        "name": "Exhibition Management System",
+        "description": "This system helps manage accounts and budgets efficiently and provides detailed financial reports, budgeting tools, and expense tracking capabilities.",
+        "price": "$499",
+        "image": "static/img/img1.jpg"
+    },
+    {
+        "id":8,
+        "name": "Rental Management System",
+        "description": "This system helps manage accounts and budgets efficiently and provides detailed financial reports, budgeting tools, and expense tracking capabilities.",
+        "price": "$499",
+        "image": "static/img/img1.jpg"
+    },
+    {
+        "id":9,
+        "name": "Distribution Management System",
+        "description": "This system helps manage accounts and budgets efficiently and provides detailed financial reports, budgeting tools, and expense tracking capabilities.",
+        "price": "$499",
+        "image": "static/img/img1.jpg"
     }
 ]

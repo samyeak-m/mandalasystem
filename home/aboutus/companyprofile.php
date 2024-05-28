@@ -30,7 +30,7 @@
         </div>
 
         <div class="photo">
-        <img src="static/img/logo.png" alt="bar" class="animate" style="height:250px;width:auto">
+        <img src="static/img/logo.png" onerror="this.src='static/img/errorimg.png'; this.alt='Error Logo image';" alt="bar" class="animate" style="height:250px;width:auto">
         </div>
 
     </div>

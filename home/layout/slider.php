@@ -7,8 +7,8 @@
   for ($i = 0; $i < $repeatCount; $i++) {
     echo '
           <div class="mySlides slide">
-            <img class="webcover" src="static/img/cover' . $i . '.jpg" alt="cover' . $i . '">
-            <img class="mobilecover" src="static/img/mcover' . $i . '.png" alt="cover' . $i . '">
+            <img class="webcover" src="static/img/cover' . $i . '.jpg" alt="cover' . $i . '"  onerror="this.src=\'static/img/errorimg.png\'; this.alt=\'Error Logo image\';">
+            <img class="mobilecover" src="static/img/mcover' . $i . '.png" alt="cover' . $i . '"  onerror="this.src=\'static/img/errorimg.png\'; this.alt=\'Error Logo image\';">
                    
           </div>
            ';

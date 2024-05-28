@@ -7,9 +7,24 @@ header{
 
 }
 
-.main{
+.product_main{
+    display: flex;
+    flex-flow: column nowrap;
     width: 100dvw;
-    padding-top: 70px;
+    padding-top: 90px;
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.product_main>h1{
+    font: var(--headfont);
+    color: var(--primarycolor);
+}
+
+.product_list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+    padding: 20px;
 }

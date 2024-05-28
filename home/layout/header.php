@@ -23,14 +23,13 @@ echo '</script>';
   <link rel="stylesheet" href="<?= htmlspecialchars($css) ?>">
   <link rel="icon" type="image/png" href="static/img/logo.png">
 
-
 </head>
 
 <body>
   <header id="header">
     <navbar id="navbar">
       <div class="logo">
-        <a href="/mandalasystem"><img class="logo-img" src="static/img/logo.png" alt="ACAI"></a>
+        <a href="/mandalasystem"><img class="logo-img" src="static/img/logo.png" alt="ACAI" onerror="this.src='static/img/errorimg.png'; this.alt='Error Logo image';"></a>
       </div>
 
       <div class="menunav">
@@ -42,7 +41,7 @@ echo '</script>';
             echo 'active'; ?>" href="abouts">About Us</a>
           <div class="dropdown-content" id="dropdown-content">
             <a href="allproducts" class="dropnav">Our Products</a>
-            <a href="customers" class="dropnav">Our Customers</a>
+            <a href="#customers" class="dropnav">Our Customers</a>
           </div>
           </div>
           <a class="anav <?php if ($page === 'Event')

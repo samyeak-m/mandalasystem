@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         products.forEach(product => {
             const productCard = `
                 <figure class="product-card">
-                    <img src="${product.image}" alt="Software Image">
+                    <img src="${product.image}" alt="Software Image" onerror="this.src='static/img/errorimg.png'; this.alt='Error Logo image';">
                     <figcaption>
                         <h2 class="product-name">${product.name}</h2>
                         <p class="product-description">

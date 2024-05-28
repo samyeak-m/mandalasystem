@@ -24,7 +24,7 @@ if (!$product) {
 
 <div class="single-product-container">
     <figure class="product-card">
-        <img src="<?php echo htmlspecialchars($product['image'], ENT_QUOTES, 'UTF-8'); ?>" alt="Software Image">
+        <img src="<?php echo htmlspecialchars($product['image'], ENT_QUOTES, 'UTF-8'); ?>" alt="Software Image" onerror="this.src='static/img/errorimg.png'; this.alt='Error Logo image';">
         <figcaption>
             <h2 class="product-name"><?php echo htmlspecialchars($product['name'], ENT_QUOTES, 'UTF-8'); ?></h2>
             <p class="product-description">
