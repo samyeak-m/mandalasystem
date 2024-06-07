@@ -1,6 +1,6 @@
 <?php
 $controller = new Controller();
-$controller->header($header);
+$controller->header('Products');
 
 $controller->productdetail($productId);
 ?>

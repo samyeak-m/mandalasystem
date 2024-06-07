@@ -1,146 +1,224 @@
-<style>
-    :root {
-        --cur-background: #f8f9fa;
-        --cur-card-bg: #ffffff;
-        --cur-card-border: #e0e0e0;
-        --cur-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        --cur-shadow-hover: 0 8px 16px rgba(0, 0, 0, 0.2);
-        --cur-height: 10dvh;
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <style>
+        .product-page {
+            width: 80dvw;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+        }
 
-    .parallax {
-        position: relative;
-        background-image: url('static/img/cus-background.png');
-        min-height: var(--cur-height);
-        width: 100dvw;
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        filter: blur(8px);
-    }
+        .image-gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+        }
 
-    .parallax::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: 1;
-    }
+        .main-image {
+            width: 400px;
+            height: 400px;
+            overflow: hidden;
+            cursor: zoom-in;
+            margin-bottom: 20px;
+            z-index: 1;
+        }
 
-    .parallax img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    
-    object-fit: cover;
-    filter: blur(10px); /* Adjust blur radius as needed */
-    z-index: 0;
-}
+        .main-image img, .main-image video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-    .customer-main {
-        position: relative;
+        .thumbnail-wrapper {
+            position: relative;
+            width: 350px;
+            margin-top: 10px;
+        }
 
-        display: flex;
-        justify-content: center;
-        background-color: transparent;
-        z-index: 2;
+        .thumbnail-images {
+            display: flex;
+            justify-content: flex-start;
+            overflow-x: auto;
+            cursor: pointer;
+            scrollbar-width: none; 
+            -ms-overflow-style: none;
+        }
 
-    }
+        .thumbnail-images::-webkit-scrollbar {
+            display: none;
+        }
 
-    .content {
-        width: 70dvw;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
-        padding: 40px;
-        justify-items: center;
-        align-items: center;
-        justify-content: space-evenly;
-    }
+        .thumbnail-images img, .thumbnail-images video {
+            width: 60px;
+            height: 60px;
+            margin: 0 5px;
+            object-fit: cover;
+        }
 
-    .customer-card {
-        background-color: var(--cur-card-bg);
-        border: 1px solid var(--cur-card-border);
-        border-radius: 8px;
-        box-shadow: var(--cur-shadow);
-        overflow: hidden;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-        cursor: pointer;
-    }
+        .thumbnail-images img:hover, .thumbnail-images video:hover {
+            box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.9);
+        }
 
-    .customer-card:hover {
-        transform: translateY(-10px);
-        box-shadow: var(--cur-shadow-hover);
-    }
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            cursor: pointer;
+            z-index: 10;
+            font-size: 18px;
+            padding: 20px 8px;
+        }
 
-    .customer-card img {
-        width: 200px;
-        height: 200px;
-        object-fit: contain;
-        mix-blend-mode: multiply;
-    }
-</style>
+        .arrow:hover{
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .arrow-left {
+            left: 0;
+        }
+
+        .arrow-right {
+            right: 0;
+        }
+
+        .zoom-container {
+            width: 400px;
+            height: 400px;
+            overflow: hidden;
+            border: 1px solid #ccc;
+            display: block;
+            opacity: 0;
+            z-index: 5;
+        }
+
+        .zoom-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .container {
+            display: flex;
+            justify-content: start;
+        }
+    </style>
 </head>
-
 <body>
-    <div class="parallax">
-        <div class="customer-main">
-            <div class="content">
-                <a href="https://www.company1.com" class="customer-card">
-                    <img src="static/img/logo1.png" alt="Customer 1"
-                        onerror="this.src='static/img/errorimg.png'; this.alt='Error Logo image';">
-                </a>
-                <a href="https://www.company2.com" class="customer-card">
-                    <img src="static/img/logo2.png" alt="Customer 2"
-                        onerror="this.src='static/img/errorimg.png'; this.alt='Error Logo image';">
-                </a>
-                <a href="https://www.company3.com" class="customer-card">
-                    <img src="static/img/logo3.png" alt="Customer 3"
-                        onerror="this.src='static/img/errorimg.png'; this.alt='Error Logo image';">
-                </a>
-                <a href="https://www.company4.com" class="customer-card">
-                    <img src="static/img/logo4.png" alt="Customer 4"
-                        onerror="this.src='static/img/errorimg.png'; this.alt='Error Logo image';">
-                </a>
-                <a href="https://www.company5.com" class="customer-card">
-                    <img src="static/img/logo5.png" alt="Customer 5"
-                        onerror="this.src='static/img/errorimg.png'; this.alt='Error Logo image';">
-                </a>
-                <a href="https://www.company6.com" class="customer-card">
-                    <img src="static/img/logo6.png" alt="Customer 6"
-                        onerror="this.src='static/img/errorimg.png'; this.alt='Error Logo image';">
-                </a>
-                <a href="https://www.company7.com" class="customer-card">
-                    <img src="static/img/logo7.png" alt="Customer 7"
-                        onerror="this.src='static/img/errorimg.png'; this.alt='Error Logo image';">
-                </a>
-                <a href="https://www.company8.com" class="customer-card">
-                    <img src="static/img/logo8.png" alt="Customer 8"
-                        onerror="this.src='static/img/errorimg.png'; this.alt='Error Logo image';">
-                </a>
-                <a href="https://www.company9.com" class="customer-card">
-                    <img src="static/img/logo9.png" alt="Customer 9"
-                        onerror="this.src='static/img/errorimg.png'; this.alt='Error Logo image';">
-                </a>
-                <a href="https://www.company10.com" class="customer-card">
-                    <img src="static/img/logo10.png" alt="Customer 10"
-                        onerror="this.src='static/img/errorimg.png'; this.alt='Error Logo image';">
-                </a>
-                <a href="https://www.company11.com" class="customer-card">
-                    <img src="static/img/logo11.png" alt="Customer 11"
-                        onerror="this.src='static/img/errorimg.png'; this.alt='Error Logo image';">
-                </a>
+    <div class="product-page">
+        <div class="image-gallery">
+            <div class="container">
+                <div class="main-image" id="mainImageContainer" onmousemove="moveZoom(event)" onmouseover="showZoomedImage()" onmouseout="hideZoomedImage()">
+                    <img id="mainImage" src="static/img/logo.png" alt="Main Product Image">
+                    <video id="mainVideo" controls style="display: none;">
+                        <source src="" type="video/mp4">
+                    </video>
+                </div>
+                <div class="zoom-container" id="zoomContainer">
+                    <img id="zoomedImage" src="static/img/logo.png" alt="Zoomed Image">
+                </div>
+            </div>
+            <div class="thumbnail-wrapper">
+                <button class="arrow arrow-left" id="arrowLeft" onclick="scrollThumbnails('left')">&lt;</button>
+                <div class="thumbnail-images" id="thumbnailContainer">
+                    <img src="static/img/logo.png" alt="Thumbnail 1" class="thumb" onclick="changeToImage(this)">
+                    <img src="static/img/img1.jpg" alt="Thumbnail 2" class="thumb" onclick="changeToImage(this)">
+                    <video class="thumb" onclick="changeToVideo(this)">
+                        <source src="static/img/stall.mp4" type="video/mp4">
+                    </video>
+                    <img src="static/img/cover0.jpg" alt="Thumbnail 3" class="thumb" onclick="changeToImage(this)">
+                    <img src="static/img/img1.jpg" alt="Thumbnail 4" class="thumb" onclick="changeToImage(this)">
+                    <video class="thumb" onclick="changeToVideo(this)">
+                        <source src="static/img/gallery.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <button class="arrow arrow-right" id="arrowRight" onclick="scrollThumbnails('right')">&gt;</button>
             </div>
         </div>
     </div>
-</body>
+    <script>
+        function changeToImage(element) {
+            var mainImageContainer = document.getElementById('mainImageContainer');
+            var mainImage = document.getElementById('mainImage');
+            var zoomedImage = document.getElementById('zoomedImage');
+            var mainVideo = document.getElementById('mainVideo');
 
+            mainImage.src = element.src;
+            zoomedImage.src = element.src;
+
+            mainImage.style.display = 'block';
+            mainVideo.style.display = 'none';
+            mainImageContainer.style.cursor = 'zoom-in';
+        }
+
+        function changeToVideo(element) {
+            var mainImageContainer = document.getElementById('mainImageContainer');
+            var mainVideo = document.getElementById('mainVideo');
+            var mainImage = document.getElementById('mainImage');
+            var source = element.querySelector('source');
+
+            source.src = element.querySelector('source').src;
+            mainVideo.load();
+
+            mainImage.style.display = 'none';
+            mainVideo.style.display = 'block';
+            mainImageContainer.style.cursor = 'default';
+        }
+
+        function showZoomedImage() {
+            var zoomContainer = document.getElementById('zoomContainer');
+            if (document.getElementById('mainImage').style.display !== 'none') {
+                zoomContainer.style.opacity = '1';
+            }
+        }
+
+        function hideZoomedImage() {
+            var zoomContainer = document.getElementById('zoomContainer');
+            zoomContainer.style.opacity = '0';
+        }
+
+        function moveZoom(event) {
+            var zoomedImage = document.getElementById('zoomedImage');
+            var rect = event.target.getBoundingClientRect();
+            var x = event.clientX - rect.left;
+            var y = event.clientY - rect.top;
+            var xPercent = (x / rect.width) * 100;
+            var yPercent = (y / rect.height) * 100;
+            zoomedImage.style.transformOrigin = `${xPercent}% ${yPercent}%`;
+            zoomedImage.style.transform = "scale(2)";
+        }
+
+        function checkOverflow() {
+            var thumbnailContainer = document.getElementById('thumbnailContainer');
+            var arrowLeft = document.getElementById('arrowLeft');
+            var arrowRight = document.getElementById('arrowRight');
+
+            arrowLeft.style.display = thumbnailContainer.scrollLeft > 0 ? 'block' : 'none';
+            arrowRight.style.display = thumbnailContainer.scrollWidth > thumbnailContainer.clientWidth + thumbnailContainer.scrollLeft ? 'block' : 'none';
+        }
+
+        function scrollThumbnails(direction) {
+            var thumbnailContainer = document.getElementById('thumbnailContainer');
+            var scrollAmount = 100;
+
+            if (direction === 'left') {
+                thumbnailContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            } else if (direction === 'right') {
+                thumbnailContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            }
+
+            setTimeout(checkOverflow, 300);
+        }
+
+        document.getElementById('thumbnailContainer').addEventListener('scroll', checkOverflow);
+        window.addEventListener('resize', checkOverflow);
+        window.addEventListener('load', checkOverflow);
+    </script>
+</body>
 </html>

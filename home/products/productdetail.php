@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="static/css/products/productdetail.css">
+
 <?php
 function getProductById($id)
 {
@@ -24,8 +26,8 @@ if (!$product) {
 
 <div class="single-product-container">
     <figure class="product-card">
-        <img src="<?php echo htmlspecialchars($product['image'], ENT_QUOTES, 'UTF-8'); ?>" alt="Software Image" onerror="this.src='static/img/errorimg.png'; this.alt='Error Logo image';">
-        <figcaption>
+        <img class="product-img" src="<?php echo htmlspecialchars($product['image'], ENT_QUOTES, 'UTF-8'); ?>" alt="Software Image" onerror="this.src='static/img/errorimg.png'; this.alt='Error Logo image';">
+        <figcaption class="product-detail">
             <h2 class="product-name"><?php echo htmlspecialchars($product['name'], ENT_QUOTES, 'UTF-8'); ?></h2>
             <p class="product-description">
                 <?php echo htmlspecialchars($product['description'], ENT_QUOTES, 'UTF-8'); ?>

@@ -29,7 +29,8 @@ echo '</script>';
   <header id="header">
     <navbar id="navbar">
       <div class="logo">
-        <a href="/mandalasystem"><img class="logo-img" src="static/img/logo.png" alt="ACAI" onerror="this.src='static/img/errorimg.png'; this.alt='Error Logo image';"></a>
+        <a href="/mandalasystem"><img class="logo-img" src="static/img/logo.png" alt="ACAI"
+            onerror="this.src='static/img/errorimg.png'; this.alt='Error Logo image';"></a>
       </div>
 
       <div class="menunav">
@@ -37,39 +38,40 @@ echo '</script>';
         <a class="anav <?php if ($page === 'Home')
           echo 'active'; ?>" href="/mandalasystem">Home</a>
         <div class="dropdown">
-          <a class="anav dropbtn <?php if ($page === 'Abouts')
+          <a class="anav dropbtn <?php if ($page === 'Abouts' || $page === 'Products')
             echo 'active'; ?>" href="abouts">About Us</a>
           <div class="dropdown-content" id="dropdown-content">
-            <a href="allproducts" class="dropnav">Our Products</a>
+            <a href="allproducts" class="dropnav <?php if ($page === 'Products')
+            echo 'active'; ?>">Our Products</a>
             <a href="#customers" class="dropnav">Our Customers</a>
           </div>
-          </div>
-          <a class="anav <?php if ($page === 'Event')
-            echo 'active'; ?>" href="event">Event</a>
         </div>
+        <a class="anav <?php if ($page === 'Contact')
+          echo 'active'; ?>" href="contact">Contact Us</a>
+      </div>
 
-        <div class="menuToggle">
+      <div class="menuToggle">
 
-          <input type="checkbox" />
+        <input type="checkbox" />
 
-          <span></span>
-          <span></span>
-          <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
 
-          <ul class="menu">
+        <ul class="menu">
 
-            <a href="/acai">
-              <li>Home</li>
-            </a>
-            <a href="abouts">
-              <li>About us</li>
-            </a>
-            <a href="products">
-              <li>Our Product</li>
-            </a>
+          <a href="/acai">
+            <li>Home</li>
+          </a>
+          <a href="abouts">
+            <li>About us</li>
+          </a>
+          <a href="products">
+            <li>Our Product</li>
+          </a>
 
-          </ul>
-        </div>
+        </ul>
+      </div>
     </navbar>
   </header>
   <script src="static/js/layout/header.js"></script>
